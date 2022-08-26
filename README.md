@@ -19,7 +19,7 @@ flowchart LR
         R["Rock Pi S"]
     end
 
-    subgraph D["Riproduzione"]
+    subgraph S["Riproduzione"]
         CA["Car Speaker"]
         CH["Cheap Speaker"]
     end
