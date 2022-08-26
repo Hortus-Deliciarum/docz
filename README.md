@@ -8,9 +8,8 @@ flowchart LR
     B["Microfono"]
     C["DSP Processing"]
     D["Speaker"]
-    E["Elemento Vibrante"]
 
-    subgraph E
+    subgraph E["Elemento Vibrante"]
         Material-->Motor
     end
 
