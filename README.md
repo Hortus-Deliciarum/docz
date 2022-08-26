@@ -10,6 +10,7 @@ graph LR
     D["Speaker"]
 
     subgraph TOP
+        direction LR
         Material-->Motor
     end
 
