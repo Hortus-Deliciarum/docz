@@ -11,15 +11,18 @@ flowchart LR
     end
 
     subgraph B["Microfono"]
+        direction TB
         Piezoelectric
         Electret
     end
 
     subgraph D["DSP Processing"]
+        direction TB
         R["Rock Pi S"]
     end
 
     subgraph S["Riproduzione"]
+        direction TB
         CA["Car Speaker"]
         CH["Cheap Speaker"]
     end
