@@ -30,3 +30,9 @@ flowchart LR
     E --> B --> D --> S
 ```
 
+```mermaid
+flowchart LR
+
+A["Elemento Vibrante"]-->B["Microfono"]-->C["DSP Processing"]-->D["Riproduzione"]
+```
+
