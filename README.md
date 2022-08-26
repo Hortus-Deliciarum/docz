@@ -16,12 +16,12 @@ flowchart LR
     end
 
     subgraph D["DSP Processing"]
-        Rock Pi S
+        R["Rock Pi S"]
     end
 
     subgraph D["Riproduzione"]
-        Car Speaker
-        Cheap Speaker
+        CA["Car Speaker"]
+        CH["Cheap Speaker"]
     end
 
     E --> B --> D --> S
