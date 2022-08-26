@@ -6,13 +6,11 @@ Orchestra di non-strumenti meccanizzati. Work in progress seguìto a una commiss
 flowchart LR
 
     subgraph E["Elemento Vibrante"]
-    direction TD
         Material
         ESP32-->Motor
     end
 
     subgraph B["Microfono"]
-        direction TD
         Piezoelectric
         Electret
     end
@@ -22,7 +20,6 @@ flowchart LR
     end
 
     subgraph D["Riproduzione"]
-        direction TD
         Car Speaker
         Cheap Speaker
     end
