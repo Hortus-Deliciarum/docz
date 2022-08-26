@@ -15,3 +15,8 @@ flowchart LR
 
     E --> B --> C --> D
 ```
+
+```mermaid
+flowchart LR
+Meccanica-->Analogica-->Digitale
+```
