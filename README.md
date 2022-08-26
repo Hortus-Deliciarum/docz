@@ -5,7 +5,6 @@ Orchestra di non-strumenti meccanizzati. Work in progress seguìto a una commiss
 ```mermaid
 graph TD;
     A-->B;
-    A-->C;
     B-->D;
     C-->D;
 ```
