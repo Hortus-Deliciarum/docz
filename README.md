@@ -4,7 +4,5 @@ Orchestra di non-strumenti meccanizzati. Work in progress seguìto a una commiss
 
 ```mermaid
 graph TD;
-    A-->B;
-    B-->D;
-    C-->D;
+    Elemento Vibrante --> Microfono -> DSP Processing -> Speaker;
 ```
