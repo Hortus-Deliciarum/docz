@@ -4,13 +4,16 @@ Orchestra di non-strumenti meccanizzati. Work in progress seguìto a una commiss
 
 ```mermaid
 flowchart LR
-    A["Elemento Vibrante"]
-    B["Microfono"]
     C["DSP Processing"]
     D["Speaker"]
 
     subgraph E["Elemento Vibrante"]
         Material-->Motor
+    end
+
+    subgraph B["Microfono"]
+        Piazo
+        Electret
     end
 
     E --> B --> C --> D
