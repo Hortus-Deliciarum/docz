@@ -4,22 +4,29 @@ Orchestra di non-strumenti meccanizzati. Work in progress seguìto a una commiss
 
 ```mermaid
 flowchart LR
-    C["DSP Processing"]
-    D["Speaker"]
 
     subgraph E["Elemento Vibrante"]
-        Material-->Motor
+    direction TD
+        Material
+        ESP32-->Motor
     end
 
     subgraph B["Microfono"]
-        Piazo
+        direction TD
+        Piezoelectric
         Electret
     end
 
-    E --> B --> C --> D
+    subgraph D["DSP Processing"]
+        Rock Pi S
+    end
+
+    subgraph D["Riproduzione"]
+        direction TD
+        Car Speaker
+        Cheap Speaker
+    end
+
+    E --> B --> D --> S
 ```
 
-```mermaid
-flowchart LR
-Meccanica-->Analogica-->Digitale
-```
