@@ -36,3 +36,12 @@ flowchart LR
 A["Elemento Vibrante"]-->B["Microfono"]-->C["DSP Processing"]-->D["Riproduzione"]
 ```
 
+## strumenti
+
+1. player
+2. symphonia
+3. fan-ball
+4. fan-ironball
+5. table
+6. guitar
+
