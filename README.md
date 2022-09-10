@@ -44,4 +44,146 @@ A["Elemento Vibrante"]-->B["Microfono"]-->C["DSP Processing"]-->D["Riproduzione"
 4. fan-ironball
 5. table
 6. guitar
+7. rotor
+8. mask
+
+### player
+
+```mermaid
+flowchart LR
+player-->amplifier-->speaker
+```
+
+### symphonia
+
+```mermaid
+flowchart LR
+
+classDef ppp fill:#FF0000
+classDef sp fill:#009900
+
+subgraph symphonia[<p><b>symphonia</b></p>]
+    direction LR
+    subgraph sound["sound production"]
+        direction TB
+        p(["power 5v"]):::ppp --> ESP32
+        ESP32 --> motor_1 --- string_1
+        ESP32 --> motor_2 --- string_2
+        ESP32 --> motor_3 --- string_3
+    end
+
+    subgraph S["speaker"]
+        direction TB
+        amplifier --> speaker
+    end
+
+    subgraph dsp["rock"]
+        direction TB
+        r1([rotrock]) --- |OR| r2([potrock])
+    end
+
+    string_1-.-o piezo1((piezo))-->dsp-->S
+    string_2-.-o piezo2((piezo))-->dsp
+    string_3-.-o piezo3((piezo))-->dsp
+end
+
+sound:::sp
+```
+
+### fan-ball
+
+```mermaid
+flowchart LR
+
+subgraph S["speaker"]
+    direction TB
+    amplifier --> speaker
+end
+
+fanball-->electret-->amplifier
+```
+
+### fan-iron-ball
+
+```mermaid
+flowchart LR
+
+subgraph S["speaker"]
+    direction TB
+    amplifier --> speaker
+end
+
+fanIronBall-->piezo-->amplifier
+```
+
+### table
+
+### guitar
+
+```mermaid
+flowchart LR
+
+subgraph S["speaker"]
+    direction TB
+    amplifier --> speaker
+end
+
+subgraph dsp["rock"]
+    direction TB
+    r1([rotrock]) --- |OR| r2([potrock])
+end
+
+strings-->pickup-->dsp:::someclass-->amplifier
+speaker-->pickup
+
+classDef someclass fill:#f96;
+```
+
+### rotor
+
+```mermaid
+flowchart LR
+
+subgraph Spe["speaker"]
+    direction TB
+    amplifier --> speaker
+end
+
+subgraph Rot["rotor"]
+    direction TB
+    motor -.- piezo((piezo))
+    power(["power 12V"]) --o motor
+end
+
+subgraph dsp["rock"]
+    direction TB
+    r1([rotrock]) --- |OR| r2([potrock])
+end
+
+
+piezo-->dsp-->Spe
+```
+
+### mask
+
+```mermaid
+flowchart LR
+
+subgraph prod["sound production"]
+    direction TB
+    breath -.-o electret((electret))
+end
+
+bat([battery 9V]) --> electret
+
+subgraph S["speaker"]
+    direction TB
+    amplifier --> speaker
+end
+
+electret-->amplifier
+bat-->amplifier
+```
+
+
 
