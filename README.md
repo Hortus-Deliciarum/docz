@@ -50,8 +50,23 @@ A["Elemento Vibrante"]-->B["Microfono"]-->C["DSP Processing"]-->D["Riproduzione"
 ### player
 
 ```mermaid
-flowchart LR
-player-->amplifier-->speaker
+flowchart TB
+
+classDef pow fill:#FF0000
+
+subgraph S["speaker"]
+    direction LR
+    amplifier --> speaker
+    _pow2_["power 9-12V"]:::pow-.-o amplifier
+end
+
+subgraph play["player"]
+    direction LR
+    _pow1_["power 5V/USB"]:::pow-.-oESP32 --> I2S
+    wifi-->ESP32
+end
+
+I2S-->amplifier
 ```
 
 ### symphonia
@@ -62,7 +77,7 @@ flowchart LR
 classDef ppp fill:#FF0000
 classDef sp fill:#009900
 
-subgraph symphonia[<p><b>symphonia</b></p>]
+subgraph symphonia[<div><b>symphonia</b></div><div>stocazzo</div>]
     direction LR
     subgraph sound["sound production"]
         direction TB
