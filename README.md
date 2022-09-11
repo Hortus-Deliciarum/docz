@@ -81,7 +81,7 @@ subgraph symphonia[<div><b>symphonia</b></div><div>stocazzo</div>]
     direction LR
     subgraph sound["sound production"]
         direction TB
-        p(["power 5v"]):::ppp --> ESP32
+        p(["power 5V/USB"]):::ppp --> ESP32
         ESP32 --> motor_1 --- string_1
         ESP32 --> motor_2 --- string_2
         ESP32 --> motor_3 --- string_3
@@ -115,7 +115,12 @@ subgraph S["speaker"]
     amplifier --> speaker
 end
 
-fanball-->electret-->amplifier
+subgraph F["fan/ball"]
+    direction TB
+    fan --- electret
+end
+
+F-->amplifier
 ```
 
 ### fan-iron-ball
