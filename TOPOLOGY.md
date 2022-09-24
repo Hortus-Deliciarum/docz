@@ -33,11 +33,22 @@ flowchart LR
     end
 
     subgraph PLAYER
-        playerip(["IP 192.168.0.50"])
+        playerip(["IP: 192.168.0.50"])
     end
 
-    rotorip o--o pcip
-    fanip o--o pcip
-    ROTOR o--o ROTROCK
-    symphoniaip o--o pcip
-    playerip o--o pcip
+    subgraph GUITAR
+        guitarip(["IP: 192.168.0.60"])
+    end
+
+    subgraph POTROCK4
+        potrock_esp32_ip(["IP: 192.168.0.65"])
+    end
+
+    rotorip o----o pcip
+    fanip o----o pcip
+    ROTOR o----o ROTROCK
+    symphoniaip o----o pcip
+    playerip o----o pcip
+    guitarip o----o pcip
+    GUITAR --> POTROCK4
+    potrock_esp32_ip o---o pcip
